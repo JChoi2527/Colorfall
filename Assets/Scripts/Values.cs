@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Values : MonoBehaviour {
 
-    public static float fallingSpeed = .03f / Time.deltaTime;
-    public static float spawnTime = (.04f / Time.deltaTime)/fallingSpeed;
+    public static float fallingSpeed;
+    public static float spawnTime;
     public static float slidingSpeed = .2f;
-	//public static float width = Screen.width;
-	//public static float height = Screen.height;
-	public static Camera cam = Camera.main;
+    //public static float width = Screen.width;
+    //public static float height = Screen.height;
+    public static Camera cam;
 	public static float height = 16f;
 	public static float width = 10f;
 	public static float border1 = width / 3;
@@ -20,6 +20,9 @@ public class Values : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        cam = Camera.main;
+        fallingSpeed = .03f / Time.deltaTime;
+        spawnTime = (.04f / Time.deltaTime) / fallingSpeed;
         spawn = new float[3];
         spawn[0] = width / 6;
         spawn[1] = width / 2;

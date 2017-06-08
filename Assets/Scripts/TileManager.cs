@@ -9,18 +9,20 @@ public class TileManager : MonoBehaviour {
     public static int tile1;
     public static int tile2;
     public static int tile3;
-    public static GameObject RedTile = GameObject.Find("RedTile");
-    public static GameObject GreenTile = GameObject.Find("GreenTile");
-    public static GameObject BlueTile = GameObject.Find("BlueTile");
+    public static GameObject RedTile;
+    public static GameObject GreenTile;
+    public static GameObject BlueTile;
 
     // Use this for initialization
     void Start () {
-        
+        RedTile = GameObject.Find("RedTile");
+        GreenTile = GameObject.Find("GreenTile");
+        BlueTile = GameObject.Find("BlueTile");
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (Values.score >= 5)
+		if (Values.score == -1)
         {
             tile1 = Random.Range(1, 4);
             taken1 = tile1;
