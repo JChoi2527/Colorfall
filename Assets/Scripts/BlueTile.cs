@@ -6,6 +6,7 @@ public class BlueTile : MonoBehaviour
 {
 
     public static bool moving = false;
+    public static bool notColliding = true;
 
     // Use this for initialization
     void Start ()
@@ -21,6 +22,7 @@ public class BlueTile : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D collided)
 	{
+        notColliding = false;
         if (collided.gameObject.GetComponent<Block>().GetColor() == 2)
         {
             Values.addOne();
@@ -28,8 +30,18 @@ public class BlueTile : MonoBehaviour
         }
         else if (collided.gameObject.GetComponent<Block>().GetColor() != 3)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
+    }
+
+    void OnTriggerExit2D(Collider2D collided)
+    {
+        notColliding = true;
+    }
+
+    public bool Colliding()
+    {
+        return notColliding;
     }
 
     public void externalSwap(float time, Vector3 targetPosition)

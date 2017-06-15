@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e4d7c6cdce04cda4291dc19732e4e683
+timeCreated: 1497242493
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: NORTHWEST
+  fontNames:
+  - NORTHWEST
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

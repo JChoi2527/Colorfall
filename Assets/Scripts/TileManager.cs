@@ -12,17 +12,24 @@ public class TileManager : MonoBehaviour {
     public static GameObject RedTile;
     public static GameObject GreenTile;
     public static GameObject BlueTile;
+    public static bool switched;
 
     // Use this for initialization
     void Start () {
         RedTile = GameObject.Find("RedTile");
         GreenTile = GameObject.Find("GreenTile");
         BlueTile = GameObject.Find("BlueTile");
+        switched = true;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if (Values.score == -1)
+        if (Values.score == 3)
+        {
+            switched = false;
+        }
+
+		if (switched == false && RedTile.GetComponent<RedTile>().Colliding() && GreenTile.GetComponent<GreenTile>().Colliding() && BlueTile.GetComponent<BlueTile>().Colliding() && 1 == 0)
         {
             tile1 = Random.Range(1, 4);
             taken1 = tile1;
@@ -40,6 +47,7 @@ public class TileManager : MonoBehaviour {
             RedTile.GetComponent<RedTile>().externalSwap(Values.slidingSpeed, new Vector3(Values.spawn[tile1 - 1], 0, 0));
             GreenTile.GetComponent<GreenTile>().externalSwap(Values.slidingSpeed, new Vector3(Values.spawn[tile2 - 1], 0, 0));
             BlueTile.GetComponent<BlueTile>().externalSwap(Values.slidingSpeed, new Vector3(Values.spawn[tile3 - 1], 0, 0));
+            switched = true;
         }
 	}
 }

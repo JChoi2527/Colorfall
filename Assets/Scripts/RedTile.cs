@@ -5,6 +5,7 @@ using UnityEngine;
 public class RedTile : MonoBehaviour {
 
     public static bool moving = false;
+    public static bool notColliding = true;
 
 	// Use this for initialization
 	void Start () {
@@ -14,21 +15,32 @@ public class RedTile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (Values.score);
+		//Debug.Log (Values.score);
 	}
 
 	void OnTriggerEnter2D (Collider2D collided)
 	{
-		if (collided.gameObject.GetComponent<Block>().GetColor() == 0)
+        notColliding = false;
+        if (collided.gameObject.GetComponent<Block>().GetColor() == 0)
         {
 			Values.addOne ();
             Debug.Log(Values.score);
 		}
 		else if (collided.gameObject.GetComponent<Block>().GetColor() != 3)
         {
-            Time.timeScale = 0;
+            
 		}
 	}
+
+    void OnTriggerExit2D(Collider2D collided)
+    {
+        notColliding = true;
+    }
+
+    public bool Colliding()
+    {
+        return notColliding;
+    }
 
     public void externalSwap(float time, Vector3 targetPosition)
     {

@@ -14,16 +14,15 @@ public class Block : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        transform.localScale = new Vector2((Values.width / 3)-.5f, 1.5f);
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(0, -1 * Values.fallingSpeed);
+        //transform.localScale = new Vector2((Values.width / 3)-.5f, 1.5f);
         //sets column at initialization
         column = Mathf.FloorToInt(transform.position.x / Values.border1);
     }
 
     // Update is called once per frame
     void Update() {
-
+        rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(0, -1 * Values.fallingSpeed);
     }
 
     public void SetColor(int num)
@@ -152,6 +151,7 @@ public class Block : MonoBehaviour {
         transform.position = new Vector3(tempPosition.x, transform.position.y, 0);
         Debug.Log(transform.position);
         moving = false;
+        gameObject.GetComponent<TrailRenderer>().enabled = false;
     }
 
     void externalSwap(float time, Vector3 targetPosition)
