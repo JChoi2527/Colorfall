@@ -53,6 +53,6 @@ public class Values : MonoBehaviour {
 
     public static void restart()
     {
-        Application.LoadLevel(0);
+        //Application.LoadScene(main);
     }
 }
