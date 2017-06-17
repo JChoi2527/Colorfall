@@ -31,7 +31,7 @@ public class TileManager : MonoBehaviour {
         if (Values.spawned == switchNum)
         {
             Values.stopSpawn();
-            if (Values.scanned >= Values.spawned && RedTile.GetComponent<RedTile>().Colliding() == true && GreenTile.GetComponent<GreenTile>().Colliding() == true && BlueTile.GetComponent<BlueTile>().Colliding() == true)
+            if (Values.scanned == Values.spawned && RedTile.GetComponent<RedTile>().Colliding() == true && GreenTile.GetComponent<GreenTile>().Colliding() == true && BlueTile.GetComponent<BlueTile>().Colliding() == true)
             {
                 Values.continueSpawn();
                 Switch();

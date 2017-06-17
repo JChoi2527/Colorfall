@@ -27,7 +27,7 @@ public class RedTile : MonoBehaviour {
 		}
 		else if (collided.gameObject.GetComponent<Block>().GetColor() != 3)
         {
-            //Values.gameOver();
+            Values.gameOver();
 		}
 	}
 
