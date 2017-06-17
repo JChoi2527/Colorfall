@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4700953925982990}
-  - component: {fileID: 50851484189351542}
   - component: {fileID: 212800287749794796}
+  - component: {fileID: 50851484189351542}
   - component: {fileID: 61729626013214964}
   - component: {fileID: 114922703063979874}
   - component: {fileID: 96512287325288522}
@@ -80,7 +80,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.3, y: 2.3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -223,8 +223,8 @@ SpriteRenderer:
   m_SortingLayerID: 2068307925
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1a73637c493e30645b97240acc62161a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 50d3e32d528fe43d4942fb556df85420, type: 3}
+  m_Color: {r: 0.1397059, g: 0.2168355, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
