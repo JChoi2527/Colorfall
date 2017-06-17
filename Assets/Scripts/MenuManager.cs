@@ -17,16 +17,25 @@ public class MenuManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         myAnimator.SetBool("IsOpen", mainMenuIsOpen);
-        myAnimator.SetBool("IsOver", gameIsOver);
+        myAnimator.SetBool("IsOver", Values.gameIsOver);
     }
 
     public void mainMenuOpen()
     {
         mainMenuIsOpen = true;
+        Values.stopBlock();
+        Values.stopSpawn();
     }
 
     public void mainMenuClose()
     {
         mainMenuIsOpen = false;
+        Values.continueBlock();
+        Values.continueSpawn();
+    }
+
+    public void restartMeu()
+    {
+        Values.restart();
     }
 }

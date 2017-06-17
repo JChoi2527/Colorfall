@@ -23,6 +23,10 @@ public class Block : MonoBehaviour {
     void Update() {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -1 * Values.fallingSpeed);
+        if (Values.DestroyAll == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SetColor(int num)
@@ -157,5 +161,15 @@ public class Block : MonoBehaviour {
     void externalSwap(float time, Vector3 targetPosition)
     {
         StartCoroutine(Swap(time, targetPosition));
+    }
+
+    public void OnBecameInvisible()
+    {
+        //Destroy(gameObject);
+    }
+
+    public void DestroyCircle()
+    {
+        Destroy(gameObject);
     }
 }

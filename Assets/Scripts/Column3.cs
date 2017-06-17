@@ -2,44 +2,53 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Column3 : MonoBehaviour {
+public class Column3 : MonoBehaviour
+{
 
-	public GameObject RedBlock;
-	public GameObject GreenBlock;
-	public GameObject BlueBlock;
+    public GameObject RedBlock;
+    public GameObject GreenBlock;
+    public GameObject BlueBlock;
     public GameObject InvisibleBlock;
     public GameObject Instance;
-	public int whichColor;
+    public int whichColor;
 
-	void Start () {
-		InvokeRepeating ("Spawn", Values.spawnTime, Values.spawnTime);
-	}
-
-    void Spawn()
+    void Start()
     {
-        if (Values.fallingSpeed != 0)
+        StartCoroutine("Spawn");
+    }
+
+
+    IEnumerator Spawn()
+    {
+        while (true)
         {
-            whichColor = Random.Range(0, 7);
-            if (whichColor == 0 || whichColor == 1)
+            if (Values.fallingSpeed > 0 && Values.spawnTime > 0)
             {
-                Instance = Instantiate(RedBlock, new Vector3(Values.spawn[2], Values.height + 1, 0), Quaternion.identity);
-                Instance.GetComponent<Block>().SetColor(0);
+                Values.DestroyAll = false;
+                Values.spawnAddOne();
+                whichColor = Random.Range(0, 7);
+                if (whichColor == 0 || whichColor == 1)
+                {
+                    Instance = Instantiate(RedBlock, new Vector3(Values.spawn[2], Values.height + 1, 0), Quaternion.identity);
+                    Instance.GetComponent<Block>().SetColor(0);
+                }
+                else if (whichColor == 2 || whichColor == 3)
+                {
+                    Instance = Instantiate(GreenBlock, new Vector3(Values.spawn[2], Values.height + 1, 0), Quaternion.identity);
+                    Instance.GetComponent<Block>().SetColor(1);
+                }
+                else if (whichColor == 4 || whichColor == 5)
+                {
+                    Instance = Instantiate(BlueBlock, new Vector3(Values.spawn[2], Values.height + 1, 0), Quaternion.identity);
+                    Instance.GetComponent<Block>().SetColor(2);
+                }
+                else
+                {
+                    Instance = Instantiate(InvisibleBlock, new Vector3(Values.spawn[2], Values.height + 1, 0), Quaternion.identity);
+                    Instance.GetComponent<Block>().SetColor(3);
+                }
             }
-            else if (whichColor == 2 || whichColor == 3)
-            {
-                Instance = Instantiate(GreenBlock, new Vector3(Values.spawn[2], Values.height + 1, 0), Quaternion.identity);
-                Instance.GetComponent<Block>().SetColor(1);
-            }
-            else if (whichColor == 4 || whichColor == 5)
-            {
-                Instance = Instantiate(BlueBlock, new Vector3(Values.spawn[2], Values.height + 1, 0), Quaternion.identity);
-                Instance.GetComponent<Block>().SetColor(2);
-            }
-            else
-            {
-                Instance = Instantiate(InvisibleBlock, new Vector3(Values.spawn[2], Values.height + 1, 0), Quaternion.identity);
-                Instance.GetComponent<Block>().SetColor(3);
-            }
+            yield return new WaitForSeconds(Values.spawnTime);
         }
     }
 

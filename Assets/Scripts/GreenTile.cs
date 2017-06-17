@@ -27,16 +27,19 @@ public class GreenTile : MonoBehaviour
         if (collided.gameObject.GetComponent<Block>().GetColor() == 1)
         {
             Values.addOne();
-            Debug.Log(Values.score);
         }
         else if (collided.gameObject.GetComponent<Block>().GetColor() != 3)
         {
-            //Time.timeScale = 0;
+            //Values.gameOver();
         }
     }
 
     void OnTriggerExit2D(Collider2D collided)
     {
+        if (collided.gameObject.GetComponent<Block>().GetColor() == 0 || collided.gameObject.GetComponent<Block>().GetColor() == 1 || collided.gameObject.GetComponent<Block>().GetColor() == 2 || collided.gameObject.GetComponent<Block>().GetColor() == 3)
+        {
+            Values.scannedPlusOne();
+        }
         notColliding = true;
     }
 
@@ -58,7 +61,6 @@ public class GreenTile : MonoBehaviour
         {
             i += Time.deltaTime / time;
             transform.position = Vector3.Lerp(transform.position, targetPosition, i);
-            targetPosition.y -= Time.deltaTime * Values.fallingSpeed;
             //test2.position = Vector3.Lerp(test2.position, tempPos1, i);
             yield return 0;
         }

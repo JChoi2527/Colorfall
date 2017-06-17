@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Values : MonoBehaviour {
 
@@ -16,34 +17,29 @@ public class Values : MonoBehaviour {
 	public static float border2 = (width / 3) * 2;
     public static float[] spawn;
 	public static int score = 0;
+    public static int spawned = 0;
+    public static int scanned = 0;
+    public static bool gameIsOver = false;
+    public static bool DestroyAll = false;
+    public static float fallingSpeedRef;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         cam = Camera.main;
-        fallingSpeed = .03f / Time.deltaTime; ;
+        fallingSpeed = .05f / Time.deltaTime;
         spawnTime = (.05f / Time.deltaTime) / fallingSpeed;
         spawn = new float[3];
         spawn[0] = width / 6;
         spawn[1] = width / 2;
         spawn[2] = (width * 5) / 6;
         //Time.timeScale = 1;
-
     }
 
 	// Update is called once per frame
 	void Update () {
-        if (MenuManager.mainMenuIsOpen == true)
-        {
-            fallingSpeed = 0;
-            spawnTime = 0;
-        }
-        else
-        {
-            fallingSpeed = .03f / Time.deltaTime; ;
-            spawnTime = (.05f / Time.deltaTime) / fallingSpeed;
-        }
-        Debug.Log(score);
+        Debug.Log(spawned);
+        Debug.Log(scanned);
     }
 
 	public static void addOne()
@@ -53,6 +49,53 @@ public class Values : MonoBehaviour {
 
     public static void restart()
     {
-        //Application.LoadScene(main);
+        gameIsOver = false;
+        DestroyAll = true;
+        fallingSpeed = .05f / Time.deltaTime;
+        fallingSpeedRef = .05f / Time.deltaTime;
+        spawnTime = (.05f / Time.deltaTime) / fallingSpeed;
+    }
+
+    public static void stopBlock()
+    {
+        fallingSpeedRef = fallingSpeed;
+        fallingSpeed = 0;
+    }
+
+    public static void continueBlock()
+    {
+        fallingSpeed = .03f / Time.deltaTime;
+    }
+
+    public static void stopSpawn()
+    {
+        spawnTime = 0;
+    }
+
+    public static void continueSpawn()
+    {
+        spawnTime = (.05f / Time.deltaTime) / fallingSpeed;
+    }
+
+    public static void spawnAddOne()
+    {
+        spawned += 1;
+    }
+
+    public static void scannedPlusOne()
+    {
+        scanned += 1;
+    }
+
+    public static void gameOver()
+    {
+        gameIsOver = true;
+        fallingSpeed = 0;
+        spawnTime = 0;
+    }
+
+    public static void faster()
+    {
+        fallingSpeed += .5f;
     }
 }
