@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        mainMenuIsOpen = true;
+        mainMenuIsOpen = false;
         myAnimator = GetComponent<Animator>();
     }
 	
@@ -18,6 +18,7 @@ public class MenuManager : MonoBehaviour {
 	void Update () {
         myAnimator.SetBool("IsOpen", mainMenuIsOpen);
         myAnimator.SetBool("IsOver", Values.gameIsOver);
+        myAnimator.SetBool("startGame", Values.startGame);
     }
 
     public void mainMenuOpen()
@@ -34,8 +35,17 @@ public class MenuManager : MonoBehaviour {
         Values.continueSpawn();
     }
 
+    public void startGame()
+    {
+        Values.continueBlock();
+        Values.continueSpawn();
+        Values.startGame = false;
+    }
+
     public void restartMeu()
     {
-        Values.restart();
+        Values.gameIsOver = false;
+        Values.resetStats();
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

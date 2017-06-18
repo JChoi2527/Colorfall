@@ -23,7 +23,7 @@ public class Block : MonoBehaviour {
     void Update() {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0, -1 * Values.fallingSpeed);
-        if (Values.DestroyAll == true)
+        if (transform.position.y < -5)
         {
             Destroy(gameObject);
         }
@@ -166,10 +166,5 @@ public class Block : MonoBehaviour {
     public void OnBecameInvisible()
     {
         //Destroy(gameObject);
-    }
-
-    public void DestroyCircle()
-    {
-        Destroy(gameObject);
     }
 }

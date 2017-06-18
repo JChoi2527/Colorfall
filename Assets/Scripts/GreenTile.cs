@@ -11,7 +11,7 @@ public class GreenTile : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        transform.position = new Vector3 (Values.spawn[1], 0, 0);
+        transform.position = new Vector3 (Values.spawn[1], .5f, 0);
         transform.localScale = new Vector2 (Values.width / 3, 1);
     }
 

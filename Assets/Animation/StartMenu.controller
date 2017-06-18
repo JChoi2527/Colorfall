@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Back
+  m_Name: StartMenu
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsOpen
@@ -46,8 +46,8 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: IsOpen
+  - m_ConditionMode: 2
+    m_ConditionEvent: startGame
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110262650}
@@ -70,10 +70,7 @@ AnimatorStateTransition:
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsOpen
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: startGame
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -151,7 +148,7 @@ AnimatorStateMachine:
     m_Position: {x: 180, y: -108, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110262650}
-    m_Position: {x: 180, y: -24, z: 0}
+    m_Position: {x: 132, y: -24, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -159,7 +156,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -72, y: -180, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
-  m_ExitPosition: {x: 276, y: 48, z: 0}
+  m_ExitPosition: {x: 276, y: 108, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 110262650}
 --- !u!1107 &1107315866920169780

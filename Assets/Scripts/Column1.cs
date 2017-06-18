@@ -47,7 +47,7 @@ public class Column1 : MonoBehaviour {
                     Instance.GetComponent<Block>().SetColor(3);
                 }
             }
-            yield return new WaitForSeconds(Values.spawnTime);
+            yield return new WaitForSeconds(Values.spawnTime );
         }
     }
 

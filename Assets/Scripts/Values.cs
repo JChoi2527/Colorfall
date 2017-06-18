@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Values : MonoBehaviour {
 
-    public static float fallingSpeed;
-    public static float spawnTime;
+    public static float fallingSpeed = 0f;
+    public static float fallingSpeedRef = 2f;
+    public static float spawnTime = 0f;
     public static float slidingSpeed = .2f;
     //public static float width = Screen.width;
     //public static float height = Screen.height;
@@ -21,14 +22,12 @@ public class Values : MonoBehaviour {
     public static int scanned = 0;
     public static bool gameIsOver = false;
     public static bool DestroyAll = false;
-    public static float fallingSpeedRef;
+    public static bool startGame = true;
 
 
     // Use this for initialization
     void Start () {
         cam = Camera.main;
-        fallingSpeed = .05f / Time.deltaTime;
-        spawnTime = (.05f / Time.deltaTime) / fallingSpeed;
         spawn = new float[3];
         spawn[0] = width / 6;
         spawn[1] = width / 2;
@@ -38,23 +37,13 @@ public class Values : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(spawned);
-        Debug.Log(scanned);
+        Debug.Log(fallingSpeedRef);
     }
 
 	public static void addOne()
 	{
         score++;
 	}
-
-    public static void restart()
-    {
-        gameIsOver = false;
-        DestroyAll = true;
-        fallingSpeed = .05f / Time.deltaTime;
-        fallingSpeedRef = .05f / Time.deltaTime;
-        spawnTime = (.05f / Time.deltaTime) / fallingSpeed;
-    }
 
     public static void stopBlock()
     {
@@ -64,7 +53,7 @@ public class Values : MonoBehaviour {
 
     public static void continueBlock()
     {
-        fallingSpeed = .03f / Time.deltaTime;
+        fallingSpeed = fallingSpeedRef;
     }
 
     public static void stopSpawn()
@@ -74,7 +63,7 @@ public class Values : MonoBehaviour {
 
     public static void continueSpawn()
     {
-        spawnTime = (.05f / Time.deltaTime) / fallingSpeed;
+        spawnTime = 1.66f;
     }
 
     public static void spawnAddOne()
@@ -97,5 +86,16 @@ public class Values : MonoBehaviour {
     public static void faster()
     {
         fallingSpeed += .5f;
+    }
+
+    public static void resetStats()
+    {
+        cam = Camera.main;
+        score = 0;
+        fallingSpeed = 2f;
+        fallingSpeedRef = 2f;
+        spawnTime = 1.66f;
+        spawned = 0;
+        scanned = 0;
     }
 }
