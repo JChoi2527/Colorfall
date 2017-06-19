@@ -60,4 +60,9 @@ public class TileManager : MonoBehaviour {
         GreenTile.GetComponent<GreenTile>().externalSwap(Values.slidingSpeed, new Vector3(Values.spawn[tile2 - 1], .5f, 0));
         BlueTile.GetComponent<BlueTile>().externalSwap(Values.slidingSpeed, new Vector3(Values.spawn[tile3 - 1], .5f, 0));
     }
+
+    public static void resetSwitchNum()
+    {
+        switchNum = 24;
+    }
 }

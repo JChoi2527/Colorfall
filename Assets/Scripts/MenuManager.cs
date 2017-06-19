@@ -42,10 +42,11 @@ public class MenuManager : MonoBehaviour {
         Values.startGame = false;
     }
 
-    public void restartMeu()
+    public void restartMenu()
     {
         Values.gameIsOver = false;
         Values.resetStats();
+        TileManager.resetSwitchNum();
         Application.LoadLevel(Application.loadedLevel);
     }
 }

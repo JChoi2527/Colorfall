@@ -57,17 +57,14 @@ public class Block : MonoBehaviour {
         var f = Vector3.Dot(v3, Vector3.up);
         if (Vector3.Distance(v3Pos, Input.mousePosition) < threshold)
         {
-            Debug.Log("No movement");
             return;
         }
 
         if (f >= 0.5)
         {
-            Debug.Log("Up");
         }
         else if (f <= -0.5)
         {
-            Debug.Log("Down");
         }
         else
         {

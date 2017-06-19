@@ -37,7 +37,7 @@ public class Values : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(fallingSpeedRef);
+        Debug.Log(spawned);
     }
 
 	public static void addOne()
@@ -95,7 +95,8 @@ public class Values : MonoBehaviour {
         fallingSpeed = 2f;
         fallingSpeedRef = 2f;
         spawnTime = 1.66f;
-        spawned = 0;
+        spawned = -3;
         scanned = 0;
+        Debug.Log("yeah boi");
     }
 }
