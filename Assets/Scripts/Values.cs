@@ -23,6 +23,8 @@ public class Values : MonoBehaviour {
     public static bool gameIsOver = false;
     public static bool DestroyAll = false;
     public static bool startGame = true;
+    public static int highScore;
+    public static bool newHighScore;
 
 
     // Use this for initialization
@@ -33,6 +35,7 @@ public class Values : MonoBehaviour {
         spawn[1] = width / 2;
         spawn[2] = (width * 5) / 6;
         //Time.timeScale = 1;
+        highScore = PlayerPrefs.GetInt("High Score");
     }
 
 	// Update is called once per frame
@@ -78,9 +81,13 @@ public class Values : MonoBehaviour {
 
     public static void gameOver()
     {
-        gameIsOver = true;
         fallingSpeed = 0;
         spawnTime = 0;
+        if (score > highScore)
+        {
+            PlayerPrefs.SetInt("High Score", score);
+        }
+        gameIsOver = true;
     }
 
     public static void faster()
@@ -95,8 +102,7 @@ public class Values : MonoBehaviour {
         fallingSpeed = 2f;
         fallingSpeedRef = 2f;
         spawnTime = 1.66f;
-        spawned = -3;
+        spawned = 0;
         scanned = 0;
-        Debug.Log("yeah boi");
     }
 }

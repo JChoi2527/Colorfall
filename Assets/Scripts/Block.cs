@@ -59,13 +59,6 @@ public class Block : MonoBehaviour {
         {
             return;
         }
-
-        if (f >= 0.5)
-        {
-        }
-        else if (f <= -0.5)
-        {
-        }
         else
         {
             var left = transform.TransformDirection(Vector3.left);
@@ -74,6 +67,7 @@ public class Block : MonoBehaviour {
             if (f >= 0.5)
             {
                 //RIGHT
+                GameObject.Find("Audio Source").GetComponent<Fx>().Move();
                 hit = Physics2D.Raycast(transform.position, right);
                 if (hit.collider != null)
                 {
@@ -90,6 +84,7 @@ public class Block : MonoBehaviour {
                         }
                         else
                         {
+                            GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
                             StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
                         }
                     }
@@ -98,6 +93,7 @@ public class Block : MonoBehaviour {
             else
             {
                 //LEFT
+                GameObject.Find("Audio Source").GetComponent<Fx>().Move();
                 hit = Physics2D.Raycast(transform.position, left);
                 if (hit.collider != null)
                 {
@@ -111,6 +107,7 @@ public class Block : MonoBehaviour {
                         }
                         else
                         {
+                            GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
                             StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
                         }
                     }
@@ -158,10 +155,5 @@ public class Block : MonoBehaviour {
     void externalSwap(float time, Vector3 targetPosition)
     {
         StartCoroutine(Swap(time, targetPosition));
-    }
-
-    public void OnBecameInvisible()
-    {
-        //Destroy(gameObject);
     }
 }

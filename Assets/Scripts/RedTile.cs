@@ -36,6 +36,7 @@ public class RedTile : MonoBehaviour {
         if (collided.gameObject.GetComponent<Block>().GetColor() == 0 || collided.gameObject.GetComponent<Block>().GetColor() == 1 || collided.gameObject.GetComponent<Block>().GetColor() == 2 || collided.gameObject.GetComponent<Block>().GetColor() == 3)
         {
             Values.scannedPlusOne();
+            GameObject.Find("Audio Source").GetComponent<Fx>().Score();
         }
         notColliding = true;
     }

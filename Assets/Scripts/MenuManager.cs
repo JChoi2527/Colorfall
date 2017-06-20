@@ -44,9 +44,16 @@ public class MenuManager : MonoBehaviour {
 
     public void restartMenu()
     {
+        TileManager.resetSwitchNum();
+        StartCoroutine(Fading());
+    }
+
+    IEnumerator Fading()
+    {
+        float fadeTime = GameObject.Find("Main Camera").GetComponent<Fading>().BeginFade(1);
+        yield return new WaitForSeconds(.8f);
+        Application.LoadLevel(Application.loadedLevel);
         Values.gameIsOver = false;
         Values.resetStats();
-        TileManager.resetSwitchNum();
-        Application.LoadLevel(Application.loadedLevel);
     }
 }
