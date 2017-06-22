@@ -25,6 +25,7 @@ public class Values : MonoBehaviour {
     public static bool startGame = true;
     public static int highScore;
     public static bool newHighScore;
+    public static bool backMenu;
 
 
     // Use this for initialization
@@ -83,6 +84,7 @@ public class Values : MonoBehaviour {
     {
         fallingSpeed = 0;
         spawnTime = 0;
+        backMenu = false;
         if (score > highScore)
         {
             PlayerPrefs.SetInt("High Score", score);

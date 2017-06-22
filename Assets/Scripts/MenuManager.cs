@@ -19,20 +19,25 @@ public class MenuManager : MonoBehaviour {
         myAnimator.SetBool("IsOpen", mainMenuIsOpen);
         myAnimator.SetBool("IsOver", Values.gameIsOver);
         myAnimator.SetBool("startGame", Values.startGame);
+        myAnimator.SetBool("backMenu", Values.backMenu);
     }
 
     public void mainMenuOpen()
     {
         mainMenuIsOpen = true;
+        Values.backMenu = false;
         Values.stopBlock();
         Values.stopSpawn();
+        Time.timeScale = 0;
     }
 
     public void mainMenuClose()
     {
         mainMenuIsOpen = false;
+        Values.backMenu = true;
         Values.continueBlock();
         Values.continueSpawn();
+        Time.timeScale = 1;
     }
 
     public void startGame()
@@ -40,6 +45,8 @@ public class MenuManager : MonoBehaviour {
         Values.continueBlock();
         Values.continueSpawn();
         Values.startGame = false;
+        Values.backMenu = true;
+        Time.timeScale = 1;
     }
 
     public void restartMenu()
@@ -54,6 +61,7 @@ public class MenuManager : MonoBehaviour {
         yield return new WaitForSeconds(.8f);
         Application.LoadLevel(Application.loadedLevel);
         Values.gameIsOver = false;
+        Values.backMenu = true;
         Values.resetStats();
     }
 }

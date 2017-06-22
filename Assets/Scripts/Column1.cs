@@ -21,6 +21,7 @@ public class Column1 : MonoBehaviour {
 	{
         while (true)
         {
+            yield return new WaitForSeconds(Values.spawnTime);
             if (Values.fallingSpeed > 0 && Values.spawnTime > 0)
             {
                 Values.DestroyAll = false;
@@ -47,7 +48,6 @@ public class Column1 : MonoBehaviour {
                     Instance.GetComponent<Block>().SetColor(3);
                 }
             }
-            yield return new WaitForSeconds(Values.spawnTime );
         }
     }
 
