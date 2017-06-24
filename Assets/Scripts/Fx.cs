@@ -29,12 +29,11 @@ public class Fx : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        Debug.Log(volume);
     }
 
     public void Move()
     {
-         if (audio == true)
+         if (volume == true && PlayerPrefs.GetInt("Volume") == 1)
         {
             audio.PlayOneShot(move, 1.0f);
         }
@@ -42,7 +41,7 @@ public class Fx : MonoBehaviour
 
     public void Combine()
     {
-        if (audio == true)
+        if (volume == true && PlayerPrefs.GetInt("Volume") == 1)
         {
             audio.PlayOneShot(combine, 1.0f);
         }
@@ -50,7 +49,7 @@ public class Fx : MonoBehaviour
 
     public void Score()
     {
-        if (audio == true)
+        if (volume == true && PlayerPrefs.GetInt("Volume") == 1)
         {
             audio.PlayOneShot(score, 1.0f);
         }
