@@ -27,7 +27,6 @@ public class Values : MonoBehaviour {
     public static bool newHighScore;
     public static bool backMenu;
 
-
     // Use this for initialization
     void Start () {
         cam = Camera.main;
@@ -41,7 +40,6 @@ public class Values : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(spawned);
     }
 
 	public static void addOne()

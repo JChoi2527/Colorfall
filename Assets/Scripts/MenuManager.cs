@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour {
         myAnimator.SetBool("IsOpen", mainMenuIsOpen);
         myAnimator.SetBool("IsOver", Values.gameIsOver);
         myAnimator.SetBool("startGame", Values.startGame);
-        myAnimator.SetBool("backMenu", Values.backMenu);
+        //myAnimator.SetBool("backMenu", Values.backMenu);
     }
 
     public void mainMenuOpen()
@@ -58,7 +58,7 @@ public class MenuManager : MonoBehaviour {
     IEnumerator Fading()
     {
         float fadeTime = GameObject.Find("Main Camera").GetComponent<Fading>().BeginFade(1);
-        yield return new WaitForSeconds(.8f);
+        yield return new WaitForSeconds(.3f);
         Application.LoadLevel(Application.loadedLevel);
         Values.gameIsOver = false;
         Values.backMenu = true;
