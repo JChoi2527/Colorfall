@@ -32,13 +32,9 @@ public class Fx : MonoBehaviour
         Debug.Log(volume);
     }
 
-<<<<<<< HEAD
     public void Move()
     {
-=======
-	public void Move() {
->>>>>>> cb6eaebcd61d44e34b213c39c1f27dc3a0a0fc55
-        if (audio == true)
+         if (audio == true)
         {
             audio.PlayOneShot(move, 1.0f);
         }
@@ -62,7 +58,7 @@ public class Fx : MonoBehaviour
 
     public void ChangeVolume(bool newValue)
     {
-        volume = newValue;
+        //volume = newValue;
         if (volume == true)
         {
             PlayerPrefs.SetInt("Volume", 0);
