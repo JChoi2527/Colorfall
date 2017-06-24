@@ -701,6 +701,7 @@ MonoBehaviour:
   move: {fileID: 8300000, guid: 8eb646526cdf6fc4f91f32150bd6d059, type: 3}
   combine: {fileID: 8300000, guid: 8eb646526cdf6fc4f91f32150bd6d059, type: 3}
   score: {fileID: 8300000, guid: 8eb646526cdf6fc4f91f32150bd6d059, type: 3}
+  audio: {fileID: 0}
 --- !u!82 &240272637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -710,12 +711,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 8eb646526cdf6fc4f91f32150bd6d059, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -768,7 +769,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
