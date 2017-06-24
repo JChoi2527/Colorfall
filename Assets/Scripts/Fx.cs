@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fx : MonoBehaviour {
+public class Fx : MonoBehaviour
+{
 
     public AudioClip move;
     public AudioClip combine;
     public AudioClip score;
-    AudioSource audio;
+    public AudioSource audio;
     public static bool volume;
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         audio = GetComponent<AudioSource>();
         if (PlayerPrefs.GetInt("Volume") == 1)
         {
@@ -23,23 +25,24 @@ public class Fx : MonoBehaviour {
             volume = false;
         }
     }
-	
-	// Update is called once per frame
+
+    // Update is called once per frame
     public void Update()
     {
         Debug.Log(volume);
     }
 
-	public void Move() {
-        if (audio == true && volume == true)
+    public void Move()
+    {
+        if (audio == true)
         {
             audio.PlayOneShot(move, 1.0f);
         }
     }
 
-    public void Combine ()
+    public void Combine()
     {
-        if (audio == true && volume == true)
+        if (audio == true)
         {
             audio.PlayOneShot(combine, 1.0f);
         }
@@ -47,9 +50,9 @@ public class Fx : MonoBehaviour {
 
     public void Score()
     {
-        if (audio == true && volume == true)
+        if (audio == true)
         {
-        audio.PlayOneShot(score, 1.0f);
+            audio.PlayOneShot(score, 1.0f);
         }
     }
 

@@ -40,7 +40,7 @@ public class Values : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        PlayerPrefs.GetInt("Volume");
+        Debug.Log(PlayerPrefs.GetInt("Volume"));
     }
 
 	public static void addOne()

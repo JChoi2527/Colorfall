@@ -9,6 +9,10 @@ public class VolumeToggle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+    }
+	
+	// Update is called once per frame
+	void Update () {
         volume = GetComponent<Toggle>();
         if (PlayerPrefs.GetInt("Volume") == 1)
         {
@@ -18,9 +22,5 @@ public class VolumeToggle : MonoBehaviour {
         {
             volume.isOn = false;
         }
-    }
-	
-	// Update is called once per frame
-	void Update () {
     }
 }
