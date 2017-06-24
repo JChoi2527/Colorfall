@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour {
         myAnimator.SetBool("IsOpen", mainMenuIsOpen);
         myAnimator.SetBool("IsOver", Values.gameIsOver);
         myAnimator.SetBool("startGame", Values.startGame);
-        //myAnimator.SetBool("backMenu", Values.backMenu);
+        myAnimator.SetBool("backMenu", Values.backMenu);
     }
 
     public void mainMenuOpen()

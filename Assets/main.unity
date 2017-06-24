@@ -330,8 +330,9 @@ GameObject:
   - component: {fileID: 141458783}
   - component: {fileID: 141458782}
   - component: {fileID: 141458781}
+  - component: {fileID: 141458784}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,8 +423,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 240272637}
-        m_MethodName: set_mute
+      - m_Target: {fileID: 240272636}
+        m_MethodName: ChangeVolume
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -432,10 +433,22 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!114 &141458784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141458779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073b561a4b524984f864ecf507114497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 141458783}
 --- !u!1 &173533329
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,7 +701,6 @@ MonoBehaviour:
   move: {fileID: 8300000, guid: 8eb646526cdf6fc4f91f32150bd6d059, type: 3}
   combine: {fileID: 8300000, guid: 8eb646526cdf6fc4f91f32150bd6d059, type: 3}
   score: {fileID: 8300000, guid: 8eb646526cdf6fc4f91f32150bd6d059, type: 3}
-  volume: 0
 --- !u!82 &240272637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -703,7 +715,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -1188,7 +1200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeOutTexture: {fileID: 2800000, guid: 7319378596986114cac5fb354cb4ab90, type: 3}
-  fadeSpeed: 0.3
+  fadeSpeed: 0.8
 --- !u!1 &314157448
 GameObject:
   m_ObjectHideFlags: 0
@@ -4795,8 +4807,9 @@ GameObject:
   - component: {fileID: 2025657354}
   - component: {fileID: 2025657353}
   - component: {fileID: 2025657352}
+  - component: {fileID: 2025657355}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4887,8 +4900,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 240272637}
-        m_MethodName: set_mute
+      - m_Target: {fileID: 240272636}
+        m_MethodName: ChangeVolume
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4897,10 +4910,22 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 2
+        m_CallState: 1
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!114 &2025657355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2025657350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073b561a4b524984f864ecf507114497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volume: {fileID: 2025657354}
 --- !u!1 &2096120996
 GameObject:
   m_ObjectHideFlags: 0
