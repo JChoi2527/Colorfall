@@ -7,7 +7,7 @@ public class Fx : MonoBehaviour {
     public AudioClip move;
     public AudioClip combine;
     public AudioClip score;
-    AudioSource audio;
+    public AudioSource audio;
     public static bool volume;
 
 
@@ -31,7 +31,7 @@ public class Fx : MonoBehaviour {
     }
 
 	public void Move() {
-        if (audio == true && volume == true)
+        if (audio == true)
         {
             audio.PlayOneShot(move, 1.0f);
         }
@@ -39,7 +39,7 @@ public class Fx : MonoBehaviour {
 
     public void Combine ()
     {
-        if (audio == true && volume == true)
+        if (audio == true)
         {
             audio.PlayOneShot(combine, 1.0f);
         }
@@ -47,7 +47,7 @@ public class Fx : MonoBehaviour {
 
     public void Score()
     {
-        if (audio == true && volume == true)
+        if (audio == true)
         {
         audio.PlayOneShot(score, 1.0f);
         }
