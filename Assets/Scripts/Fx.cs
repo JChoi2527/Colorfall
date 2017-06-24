@@ -16,24 +16,17 @@ public class Fx : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
-        if (PlayerPrefs.GetInt("Volume") == 1)
-        {
-            volume = true;
-        }
-        else
-        {
-            volume = false;
-        }
     }
 
     // Update is called once per frame
     public void Update()
     {
+        Debug.Log(volume);
     }
 
     public void Move()
     {
-         if (volume == true && PlayerPrefs.GetInt("Volume") == 1)
+         if (PlayerPrefs.GetInt("Volume") == 1)
         {
             audio.PlayOneShot(move, 1.0f);
         }
@@ -41,7 +34,7 @@ public class Fx : MonoBehaviour
 
     public void Combine()
     {
-        if (volume == true && PlayerPrefs.GetInt("Volume") == 1)
+        if (PlayerPrefs.GetInt("Volume") == 1)
         {
             audio.PlayOneShot(combine, 1.0f);
         }
@@ -49,7 +42,7 @@ public class Fx : MonoBehaviour
 
     public void Score()
     {
-        if (volume == true && PlayerPrefs.GetInt("Volume") == 1)
+        if (PlayerPrefs.GetInt("Volume") == 1)
         {
             audio.PlayOneShot(score, 1.0f);
         }
@@ -58,7 +51,7 @@ public class Fx : MonoBehaviour
     public void ChangeVolume(bool newValue)
     {
         //volume = newValue;
-        if (volume == true)
+        if (PlayerPrefs.GetInt("Volume") == 1)
         {
             PlayerPrefs.SetInt("Volume", 0);
             volume = false;
