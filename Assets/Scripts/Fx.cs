@@ -9,7 +9,6 @@ public class Fx : MonoBehaviour
     public AudioClip combine;
     public AudioClip score;
     public AudioSource audio;
-    public static bool volume;
 
 
     // Use this for initialization
@@ -21,14 +20,13 @@ public class Fx : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        Debug.Log(volume);
     }
 
     public void Move()
     {
          if (PlayerPrefs.GetInt("Volume") == 1)
         {
-            audio.PlayOneShot(move, 1.0f);
+            GetComponent<AudioSource>().PlayOneShot(move, 1.0f);
         }
     }
 
@@ -36,7 +34,7 @@ public class Fx : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Volume") == 1)
         {
-            audio.PlayOneShot(combine, 1.0f);
+            GetComponent<AudioSource>().PlayOneShot(combine, 1.0f);
         }
     }
 
@@ -44,22 +42,7 @@ public class Fx : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Volume") == 1)
         {
-            audio.PlayOneShot(score, 1.0f);
-        }
-    }
-
-    public void ChangeVolume(bool newValue)
-    {
-        //volume = newValue;
-        if (PlayerPrefs.GetInt("Volume") == 1)
-        {
-            PlayerPrefs.SetInt("Volume", 0);
-            volume = false;
-        }
-        else
-        {
-            PlayerPrefs.SetInt("Volume", 1);
-            volume = true;
+            GetComponent<AudioSource>().PlayOneShot(score, 1.0f);
         }
     }
 }

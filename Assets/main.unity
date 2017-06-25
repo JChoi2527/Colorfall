@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 141458781}
   - component: {fileID: 141458784}
   m_Layer: 5
-  m_Name: Volume
+  m_Name: Volume_StartMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,9 +423,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 240272636}
+      - m_Target: {fileID: 2025657355}
         m_MethodName: ChangeVolume
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -433,10 +433,10 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &141458784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,7 +448,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073b561a4b524984f864ecf507114497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: {fileID: 141458783}
+  volume_StartMenu: {fileID: 141458783}
+  volume_MainMenu: {fileID: 2025657354}
 --- !u!1 &173533329
 GameObject:
   m_ObjectHideFlags: 0
@@ -4810,7 +4811,7 @@ GameObject:
   - component: {fileID: 2025657352}
   - component: {fileID: 2025657355}
   m_Layer: 5
-  m_Name: Volume
+  m_Name: Volume_MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4901,9 +4902,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 240272636}
+      - m_Target: {fileID: 2025657355}
         m_MethodName: ChangeVolume
-        m_Mode: 6
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4911,10 +4912,10 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!114 &2025657355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4926,7 +4927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073b561a4b524984f864ecf507114497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volume: {fileID: 2025657354}
+  volume_StartMenu: {fileID: 141458783}
+  volume_MainMenu: {fileID: 2025657354}
 --- !u!1 &2096120996
 GameObject:
   m_ObjectHideFlags: 0
