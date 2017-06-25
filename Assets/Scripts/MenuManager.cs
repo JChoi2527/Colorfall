@@ -57,9 +57,9 @@ public class MenuManager : MonoBehaviour {
 
     IEnumerator Fading()
     {
-        //float fadeTime = GameObject.Find("Main Camera").GetComponent<Fading>().BeginFade(1);
+        float fadeTime = GameObject.Find("Main Camera").GetComponent<Fading>().BeginFade(1);
         yield return new WaitForSeconds(.3f);
-       // Application.LoadLevel(Application.loadedLevel);
+        Application.LoadLevel(Application.loadedLevel);
         Values.gameIsOver = false;
         Values.backMenu = true;
         Values.resetStats();
