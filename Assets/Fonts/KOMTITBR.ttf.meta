@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 8200072e6c8dd420ab1b5f0339bfdeb3
+timeCreated: 1498713102
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Komika Title - Brush
+  fontNames:
+  - Komika Title - Brush
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
