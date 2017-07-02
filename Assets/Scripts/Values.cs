@@ -12,10 +12,10 @@ public class Values : MonoBehaviour {
     //public static float width = Screen.width;
     //public static float height = Screen.height;
     public static Camera cam;
-	public static float height = 16f;
-	public static float width = 10f;
-	public static float border1 = width / 3;
-	public static float border2 = (width / 3) * 2;
+	public static float height;
+	public static float width;
+	public static float border1;
+	public static float border2;
     public static float[] spawn;
 	public static int score = 0;
     public static int spawned = 0;
@@ -30,6 +30,10 @@ public class Values : MonoBehaviour {
     // Use this for initialization
     void Start () {
         cam = Camera.main;
+        height = 2f * cam.orthographicSize;
+        width = height * cam.aspect;
+        border1 = width / 3;
+        border2 = (width / 3) * 2;
         spawn = new float[3];
         spawn[0] = width / 6;
         spawn[1] = width / 2;
