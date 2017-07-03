@@ -61,54 +61,57 @@ public class Block : MonoBehaviour {
         }
         else
         {
-            var left = transform.TransformDirection(Vector3.left);
-            var right = transform.TransformDirection(Vector3.right);
-            f = Vector3.Dot(v3, Vector3.right);
-            if (f >= 0.5)
+            if (Values.gameIsOver == false && color != 3)
             {
-                //RIGHT
-                GameObject.Find("Audio Source").GetComponent<Fx>().Move();
-                hit = Physics2D.Raycast(transform.position, right);
-                if (hit.collider != null)
+                var left = transform.TransformDirection(Vector3.left);
+                var right = transform.TransformDirection(Vector3.right);
+                f = Vector3.Dot(v3, Vector3.right);
+                if (f >= 0.5)
                 {
-                    if (hit.transform.gameObject.tag == "Block" && moving == false)
+                    //RIGHT
+                    GameObject.Find("Audio Source").GetComponent<Fx>().Move();
+                    hit = Physics2D.Raycast(transform.position, right);
+                    if (hit.collider != null)
                     {
-                        Debug.Log(GetColor());
-                        Debug.Log(hit.transform.gameObject.GetComponent<Block>().GetColor());
+                        if (hit.transform.gameObject.tag == "Block" && moving == false)
+                        {
+                            Debug.Log(GetColor());
+                            Debug.Log(hit.transform.gameObject.GetComponent<Block>().GetColor());
 
-                        tempPosition = transform.position;
-                        if (hit.transform.gameObject.GetComponent<Block>().GetColor() != color)
-                        {
-                            StartCoroutine(Swap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
-                            hit.transform.gameObject.GetComponent<Block>().externalSwap(Values.slidingSpeed, tempPosition);
-                        }
-                        else
-                        {
-                            GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
-                            StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                            tempPosition = transform.position;
+                            if (hit.transform.gameObject.GetComponent<Block>().GetColor() != color)
+                            {
+                                StartCoroutine(Swap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                                hit.transform.gameObject.GetComponent<Block>().externalSwap(Values.slidingSpeed, tempPosition);
+                            }
+                            else
+                            {
+                                GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
+                                StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                            }
                         }
                     }
                 }
-            }
-            else
-            {
-                //LEFT
-                GameObject.Find("Audio Source").GetComponent<Fx>().Move();
-                hit = Physics2D.Raycast(transform.position, left);
-                if (hit.collider != null)
+                else
                 {
-                    if (hit.transform.gameObject.tag == "Block" && moving == false)
+                    //LEFT
+                    GameObject.Find("Audio Source").GetComponent<Fx>().Move();
+                    hit = Physics2D.Raycast(transform.position, left);
+                    if (hit.collider != null)
                     {
-                        tempPosition = transform.position;
-                        if (hit.transform.gameObject.GetComponent<Block>().GetColor() != color)
+                        if (hit.transform.gameObject.tag == "Block" && moving == false)
                         {
-                            StartCoroutine(Swap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
-                            hit.transform.gameObject.GetComponent<Block>().externalSwap(Values.slidingSpeed, tempPosition);
-                        }
-                        else
-                        {
-                            GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
-                            StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                            tempPosition = transform.position;
+                            if (hit.transform.gameObject.GetComponent<Block>().GetColor() != color)
+                            {
+                                StartCoroutine(Swap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                                hit.transform.gameObject.GetComponent<Block>().externalSwap(Values.slidingSpeed, tempPosition);
+                            }
+                            else
+                            {
+                                GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
+                                StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                            }
                         }
                     }
                 }
