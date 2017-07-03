@@ -43,6 +43,7 @@ public class TileManager : MonoBehaviour {
 
     void Switch()
     {
+        GameObject.Find("Audio Source").GetComponent<Fx>().Switch();
         tile1 = Random.Range(1, 4);
         taken1 = tile1;
         tile2 = taken1;

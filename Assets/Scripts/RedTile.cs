@@ -23,20 +23,20 @@ public class RedTile : MonoBehaviour {
         notColliding = false;
         if (collided.gameObject.GetComponent<Block>().GetColor() == 0)
         {
-			Values.addOne ();
+            Values.addOne ();
 		}
 		else if (collided.gameObject.GetComponent<Block>().GetColor() != 3)
         {
             Values.gameOver();
 		}
-	}
+        GameObject.Find("Audio Source").GetComponent<Fx>().Score();
+    }
 
     void OnTriggerExit2D(Collider2D collided)
     {
         if (collided.gameObject.GetComponent<Block>().GetColor() == 0 || collided.gameObject.GetComponent<Block>().GetColor() == 1 || collided.gameObject.GetComponent<Block>().GetColor() == 2 || collided.gameObject.GetComponent<Block>().GetColor() == 3)
         {
             Values.scannedPlusOne();
-            GameObject.Find("Audio Source").GetComponent<Fx>().Score();
         }
         notColliding = true;
     }

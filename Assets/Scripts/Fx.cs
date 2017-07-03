@@ -8,6 +8,8 @@ public class Fx : MonoBehaviour
     public AudioClip move;
     public AudioClip combine;
     public AudioClip score;
+    public AudioClip switcharoo;
+    public AudioClip gameoverboo;
     public AudioSource audio;
 
 
@@ -40,9 +42,25 @@ public class Fx : MonoBehaviour
 
     public void Score()
     {
-        if (PlayerPrefs.GetInt("Volume") == 1)
+        if (PlayerPrefs.GetInt("Volume") == 1 && Values.gameIsOver == false)
         {
             GetComponent<AudioSource>().PlayOneShot(score, 1.0f);
+        }
+    }
+
+    public void Switch()
+    {
+        if (PlayerPrefs.GetInt("Volume") == 1)
+        {
+            GetComponent<AudioSource>().PlayOneShot(switcharoo, 1.0f);
+        }
+    }
+
+    public void gameOver()
+    {
+        if (PlayerPrefs.GetInt("Volume") == 1)
+        {
+            GetComponent<AudioSource>().PlayOneShot(gameoverboo, 0.8f);
         }
     }
 }

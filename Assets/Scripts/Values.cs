@@ -30,8 +30,8 @@ public class Values : MonoBehaviour {
     // Use this for initialization
     void Start () {
         cam = Camera.main;
-        height = 2f * cam.orthographicSize;
-        width = height * cam.aspect;
+        height = 18;
+        width = 10;
         border1 = width / 3;
         border2 = (width / 3) * 2;
         spawn = new float[3];
@@ -44,7 +44,6 @@ public class Values : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        
     }
 
 	public static void addOne()
@@ -85,6 +84,7 @@ public class Values : MonoBehaviour {
 
     public static void gameOver()
     {
+        GameObject.Find("Audio Source").GetComponent<Fx>().gameOver();
         fallingSpeed = 0;
         spawnTime = 0;
         backMenu = false;
@@ -98,6 +98,7 @@ public class Values : MonoBehaviour {
     public static void faster()
     {
         fallingSpeed += .5f;
+        spawnTime -= .5f;
     }
 
     public static void resetStats()
