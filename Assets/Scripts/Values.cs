@@ -30,7 +30,7 @@ public class Values : MonoBehaviour {
     // Use this for initialization
     void Start () {
         cam = Camera.main;
-        height = 18;
+        height = 19;
         width = 10;
         border1 = width / 3;
         border2 = (width / 3) * 2;
