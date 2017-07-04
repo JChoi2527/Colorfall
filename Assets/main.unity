@@ -814,18 +814,8 @@ MonoBehaviour:
   move: {fileID: 8300000, guid: 6bfacd65f990c6c4c8e20cf7cfeaa6a2, type: 3}
   combine: {fileID: 8300000, guid: 887c76f7c56279742b7ca87251b19423, type: 3}
   score: {fileID: 8300000, guid: 0ee6926142bbb0b42ac00276ce4c31d6, type: 3}
-<<<<<<< Updated upstream
   switcharoo: {fileID: 0}
   gameoverboo: {fileID: 0}
-=======
-<<<<<<< HEAD
-  switcharoo: {fileID: 8300000, guid: 2b11eb8e40f862f46afab02aa47e8a9d, type: 3}
-  gameoverboo: {fileID: 8300000, guid: 8b4705b042df4244c8544670c02e7287, type: 3}
-=======
-  switcharoo: {fileID: 0}
-  gameoverboo: {fileID: 0}
->>>>>>> ef6c05c7d6a6b1da9cd83b0bcc93e8f8f21427e8
->>>>>>> Stashed changes
   audio: {fileID: 0}
 --- !u!82 &240272637
 AudioSource:
@@ -3610,18 +3600,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481444018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< Updated upstream
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-=======
-<<<<<<< HEAD
-  m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.543333, y: 0.55753237, z: 0.55753237}
-=======
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
->>>>>>> ef6c05c7d6a6b1da9cd83b0bcc93e8f8f21427e8
->>>>>>> Stashed changes
   m_Children:
   - {fileID: 173533330}
   m_Father: {fileID: 558395339}
@@ -3629,18 +3609,10 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 6, y: 8}
   m_SizeDelta: {x: 50, y: 50}
-=======
-<<<<<<< HEAD
-  m_AnchoredPosition: {x: 13.199997, y: 13.799988}
-  m_SizeDelta: {x: 116.5, y: 117.7}
-=======
   m_AnchoredPosition: {x: 6, y: 8}
   m_SizeDelta: {x: 50, y: 50}
->>>>>>> ef6c05c7d6a6b1da9cd83b0bcc93e8f8f21427e8
->>>>>>> Stashed changes
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &1275524381
 GameObject:
