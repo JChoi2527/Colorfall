@@ -11,6 +11,8 @@ public class Block : MonoBehaviour {
     public static int column;
     public static Vector3 tempPosition;
     public static bool moving = false;
+    public static float angleX = 0;
+    public Sprite RainbowBlock;
 
     // Use this for initialization
     void Start() {
@@ -26,6 +28,21 @@ public class Block : MonoBehaviour {
         if (transform.position.y < -5)
         {
             Destroy(gameObject);
+        }
+        if (color == 4)
+        {
+            angleX += Time.deltaTime * 10;
+            transform.rotation = Quaternion.Euler(0, 0, angleX);
+        }
+
+        if (Values.isComboing == true)
+        {
+            if (GetComponent<SpriteRenderer>().enabled == true)
+            {
+                gameObject.GetComponent<SpriteRenderer>().sprite = RainbowBlock;
+                color = 4;
+                Values.comboed++;
+            }
         }
     }
 
@@ -69,25 +86,25 @@ public class Block : MonoBehaviour {
                 if (f >= 0.5)
                 {
                     //RIGHT
-                    GameObject.Find("Audio Source").GetComponent<Fx>().Move();
                     hit = Physics2D.Raycast(transform.position, right);
                     if (hit.collider != null)
                     {
                         if (hit.transform.gameObject.tag == "Block" && moving == false)
                         {
-                            Debug.Log(GetColor());
-                            Debug.Log(hit.transform.gameObject.GetComponent<Block>().GetColor());
-
                             tempPosition = transform.position;
-                            if (hit.transform.gameObject.GetComponent<Block>().GetColor() != color)
+                            if (color != 4)
                             {
-                                StartCoroutine(Swap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
-                                hit.transform.gameObject.GetComponent<Block>().externalSwap(Values.slidingSpeed, tempPosition);
-                            }
-                            else
-                            {
-                                GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
-                                StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                                if (hit.transform.gameObject.GetComponent<Block>().GetColor() != color)
+                                {
+                                    GameObject.Find("Audio Source").GetComponent<Fx>().Move();
+                                    StartCoroutine(Swap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                                    hit.transform.gameObject.GetComponent<Block>().externalSwap(Values.slidingSpeed, tempPosition);
+                                }
+                                else
+                                {
+                                    GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
+                                    StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                                }
                             }
                         }
                     }
@@ -95,22 +112,25 @@ public class Block : MonoBehaviour {
                 else
                 {
                     //LEFT
-                    GameObject.Find("Audio Source").GetComponent<Fx>().Move();
                     hit = Physics2D.Raycast(transform.position, left);
                     if (hit.collider != null)
                     {
                         if (hit.transform.gameObject.tag == "Block" && moving == false)
                         {
                             tempPosition = transform.position;
-                            if (hit.transform.gameObject.GetComponent<Block>().GetColor() != color)
+                            if (color != 4)
                             {
-                                StartCoroutine(Swap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
-                                hit.transform.gameObject.GetComponent<Block>().externalSwap(Values.slidingSpeed, tempPosition);
-                            }
-                            else
-                            {
-                                GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
-                                StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                                if (hit.transform.gameObject.GetComponent<Block>().GetColor() != color)
+                                {
+                                    GameObject.Find("Audio Source").GetComponent<Fx>().Move();
+                                    StartCoroutine(Swap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                                    hit.transform.gameObject.GetComponent<Block>().externalSwap(Values.slidingSpeed, tempPosition);
+                                }
+                                else
+                                {
+                                    GameObject.Find("Audio Source").GetComponent<Fx>().Combine();
+                                    StartCoroutine(KillSwap(Values.slidingSpeed, hit.transform.gameObject.GetComponent<Block>().transform.position));
+                                }
                             }
                         }
                     }
@@ -150,9 +170,9 @@ public class Block : MonoBehaviour {
         GetComponent<SpriteRenderer>().enabled = false;
         SetColor(3);
         transform.position = new Vector3(tempPosition.x, transform.position.y, 0);
-        Debug.Log(transform.position);
         moving = false;
         gameObject.GetComponent<TrailRenderer>().enabled = false;
+        Values.combine++;
     }
 
     void externalSwap(float time, Vector3 targetPosition)

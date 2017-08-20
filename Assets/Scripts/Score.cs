@@ -9,13 +9,13 @@ public class Score : MonoBehaviour {
 
     //GameObject myTextgameObject; // gameObject in Hierarchy
     public Text scoreText;
+    public int score = Values.score;
 
     void Start () {
-        //GetComponent<Text>() = Values.score;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        GetComponent<Text>().text = "Score: " + Values.score;
+        scoreText.text = "Score: " + Values.score;
     }
 }

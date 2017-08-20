@@ -16,7 +16,7 @@ PlayerSettings:
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
   m_ShowUnitySplashScreen: 0
-  m_ShowUnitySplashLogo: 0
+  m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
   m_SplashScreenLogoStyle: 1
@@ -218,8 +218,13 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
+<<<<<<< HEAD
   AndroidKeystoreName: D:/Users/Jake/Projects/Colorfall/choi.keystore
   AndroidKeyaliasName: dot shift
+=======
+  AndroidKeystoreName: C:/Users/Jake/Projects/Colorfall/Colorfall/choi.keystore
+  AndroidKeyaliasName: dotshift
+>>>>>>> 7f0a3c8c045b691858292bf2da2e92a105143836
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1

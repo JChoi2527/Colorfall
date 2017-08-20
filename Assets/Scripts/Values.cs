@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class Values : MonoBehaviour {
 
+    public Camera mainCamera;
     public static float fallingSpeed = 0f;
     public static float fallingSpeedRef = 2f;
     public static float spawnTime = 0f;
-    public static float slidingSpeed = .2f;
-    //public static float width = Screen.width;
-    //public static float height = Screen.height;
+    public static float slidingSpeed = .1f;
     public static Camera cam;
 	public static float height;
 	public static float width;
@@ -26,20 +25,38 @@ public class Values : MonoBehaviour {
     public static int highScore;
     public static bool newHighScore;
     public static bool backMenu;
-
+    public static int combine;
+    public static int spawnSinceCombo;
+    public static bool isComboing;
+    public static int comboed;
+    public static bool justComboed;
     // Use this for initialization
     void Start () {
         cam = Camera.main;
+
+
+
         height = 19;
         width = 10;
+
+
+
+        //width = mainCamera.pixelWidth;
+        //height = mainCamera.pixelHeight;
+
+
+
         border1 = width / 3;
         border2 = (width / 3) * 2;
         spawn = new float[3];
         spawn[0] = width / 6;
         spawn[1] = width / 2;
         spawn[2] = (width * 5) / 6;
-        //Time.timeScale = 1;
         highScore = PlayerPrefs.GetInt("High Score");
+        combine = 0;
+        comboed = 0;
+        justComboed = false;
+        score = 0;
     }
 
 	// Update is called once per frame
@@ -99,6 +116,11 @@ public class Values : MonoBehaviour {
     {
         fallingSpeed += .5f;
         spawnTime -= .5f;
+        if (spawned >= 96)
+        {
+            fallingSpeed -= .3f;
+            spawnTime -= .1f;
+        }
     }
 
     public static void resetStats()
@@ -110,5 +132,9 @@ public class Values : MonoBehaviour {
         spawnTime = 1.66f;
         spawned = 0;
         scanned = 0;
+        combine = 0;
+        isComboing = false;
+        comboed = 0;
+        justComboed = false;
     }
 }

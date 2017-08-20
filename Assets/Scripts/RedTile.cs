@@ -5,7 +5,7 @@ using UnityEngine;
 public class RedTile : MonoBehaviour {
 
     public static bool moving = false;
-    public static bool notColliding = true;
+    public static bool colliding = true;
 
 	// Use this for initialization
 	void Start () {
@@ -15,35 +15,38 @@ public class RedTile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log (Values.score);
-	}
+    }
 
 	void OnTriggerEnter2D (Collider2D collided)
 	{
-        notColliding = false;
-        if (collided.gameObject.GetComponent<Block>().GetColor() == 0)
+        colliding = true;
+        if (collided.gameObject.GetComponent<Block>().GetColor() == 0 || collided.gameObject.GetComponent<Block>().GetColor() == 4)
         {
-            Values.addOne ();
-		}
-		else if (collided.gameObject.GetComponent<Block>().GetColor() != 3)
+            if (Values.justComboed == false)
+            {
+                Values.addOne();
+            }
+        }
+        else if (collided.gameObject.GetComponent<Block>().GetColor() != 3)
         {
             Values.gameOver();
-		}
+        }
         GameObject.Find("Audio Source").GetComponent<Fx>().Score();
     }
 
     void OnTriggerExit2D(Collider2D collided)
     {
-        if (collided.gameObject.GetComponent<Block>().GetColor() == 0 || collided.gameObject.GetComponent<Block>().GetColor() == 1 || collided.gameObject.GetComponent<Block>().GetColor() == 2 || collided.gameObject.GetComponent<Block>().GetColor() == 3)
+        int collidedColor = collided.gameObject.GetComponent<Block>().GetColor();
+        if (collidedColor == 0 || collidedColor == 1 || collidedColor == 2 || collidedColor == 3 || collidedColor == 4)
         {
             Values.scannedPlusOne();
         }
-        notColliding = true;
+        colliding = false;
     }
 
     public bool Colliding()
     {
-        return notColliding;
+        return colliding;
     }
 
     public void externalSwap(float time, Vector3 targetPosition)
