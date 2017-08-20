@@ -10,7 +10,7 @@ public class Combo : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        comboBar.maxValue = 15;
+        comboBar.maxValue = 1;
         comboBar.minValue = 0;
     }
 	

@@ -116,6 +116,11 @@ public class Values : MonoBehaviour {
     {
         fallingSpeed += .5f;
         spawnTime -= .5f;
+        if (spawned >= 96)
+        {
+            fallingSpeed -= .3f;
+            spawnTime -= .1f;
+        }
     }
 
     public static void resetStats()

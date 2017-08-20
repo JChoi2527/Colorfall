@@ -323,6 +323,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 212819469783893066, guid: 056d598518e31624dbba67c6c9e7d5ed,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 212819469783893066, guid: 056d598518e31624dbba67c6c9e7d5ed,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 212819469783893066, guid: 056d598518e31624dbba67c6c9e7d5ed,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 056d598518e31624dbba67c6c9e7d5ed, type: 2}
   m_IsPrefabParent: 0
@@ -4967,7 +4982,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SWITCH
+  m_Text: BREAK
 --- !u!222 &1672209603
 CanvasRenderer:
   m_ObjectHideFlags: 0
