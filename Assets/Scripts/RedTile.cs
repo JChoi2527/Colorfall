@@ -21,9 +21,9 @@ public class RedTile : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D collided)
 	{
         notColliding = false;
-        if (collided.gameObject.GetComponent<Block>().GetColor() == 0)
+        if (collided.gameObject.GetComponent<Block>().GetColor() == 0 || collided.gameObject.GetComponent<Block>().GetColor() == 4)
         {
-            Values.addOne ();
+            Values.addOne();
 		}
 		else if (collided.gameObject.GetComponent<Block>().GetColor() != 3)
         {
@@ -34,7 +34,8 @@ public class RedTile : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D collided)
     {
-        if (collided.gameObject.GetComponent<Block>().GetColor() == 0 || collided.gameObject.GetComponent<Block>().GetColor() == 1 || collided.gameObject.GetComponent<Block>().GetColor() == 2 || collided.gameObject.GetComponent<Block>().GetColor() == 3)
+        int collidedColor = collided.gameObject.GetComponent<Block>().GetColor();
+        if (collidedColor == 0 || collidedColor == 1 || collidedColor == 2 || collidedColor == 3 || collidedColor == 4)
         {
             Values.scannedPlusOne();
         }
