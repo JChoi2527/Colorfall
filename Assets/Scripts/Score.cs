@@ -9,6 +9,7 @@ public class Score : MonoBehaviour {
 
     //GameObject myTextgameObject; // gameObject in Hierarchy
     public Text scoreText;
+    public int score = Values.score;
 
     void Start () {
     }

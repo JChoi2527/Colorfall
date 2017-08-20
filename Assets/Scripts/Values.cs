@@ -56,12 +56,11 @@ public class Values : MonoBehaviour {
         combine = 0;
         comboed = 0;
         justComboed = false;
+        score = 0;
     }
 
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(spawned);
-        Debug.Log(scanned);
     }
 
 	public static void addOne()
