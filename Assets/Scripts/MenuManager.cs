@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour {
 
     public static bool mainMenuIsOpen;
     public static bool gameIsOver;
+    public static bool reviewMenuIsOpen;
     private Animator myAnimator;
 
     // Use this for initialization
@@ -20,6 +21,7 @@ public class MenuManager : MonoBehaviour {
         myAnimator.SetBool("IsOver", Values.gameIsOver);
         myAnimator.SetBool("startGame", Values.startGame);
         myAnimator.SetBool("backMenu", Values.backMenu);
+        myAnimator.SetBool("reviewMenu", reviewMenuIsOpen);
     }
 
     public void mainMenuOpen()
@@ -53,6 +55,21 @@ public class MenuManager : MonoBehaviour {
     {
         TileManager.resetSwitchNum();
         StartCoroutine(Fading());
+    }
+
+    public void reviewMenuOpen()
+    {
+        reviewMenuIsOpen = true;
+    }
+
+    public void reviewMenuClose()
+    {
+        reviewMenuIsOpen = false;
+    }
+
+    public void rate()
+    {
+        Application.OpenURL("market://details?id=com.trollugames.caverun3d");
     }
 
     IEnumerator Fading()
