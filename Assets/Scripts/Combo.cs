@@ -10,7 +10,7 @@ public class Combo : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        comboBar.maxValue = 1;
+        comboBar.maxValue = 15;
         comboBar.minValue = 0;
     }
 	
@@ -48,5 +48,6 @@ public class Combo : MonoBehaviour {
     {
         Values.spawnSinceCombo = Values.spawned;
         Values.isComboing = true;
+        Values.justComboed = true;
     }
 }

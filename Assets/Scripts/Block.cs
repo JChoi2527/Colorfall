@@ -12,7 +12,7 @@ public class Block : MonoBehaviour {
     public static Vector3 tempPosition;
     public static bool moving = false;
     public static float angleX = 0;
-    public GameObject RainbowBlock;
+    public Sprite RainbowBlock;
 
     // Use this for initialization
     void Start() {
@@ -39,9 +39,9 @@ public class Block : MonoBehaviour {
         {
             if (GetComponent<SpriteRenderer>().enabled == true)
             {
-                Instantiate(RainbowBlock, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                gameObject.GetComponent<SpriteRenderer>().sprite = RainbowBlock;
+                color = 4;
                 Values.comboed++;
-                Destroy(gameObject);
             }
         }
     }

@@ -29,7 +29,7 @@ public class Values : MonoBehaviour {
     public static int spawnSinceCombo;
     public static bool isComboing;
     public static int comboed;
-
+    public static bool justComboed;
     // Use this for initialization
     void Start () {
         cam = Camera.main;
@@ -55,6 +55,7 @@ public class Values : MonoBehaviour {
         highScore = PlayerPrefs.GetInt("High Score");
         combine = 0;
         comboed = 0;
+        justComboed = false;
     }
 
 	// Update is called once per frame
@@ -130,5 +131,6 @@ public class Values : MonoBehaviour {
         combine = 0;
         isComboing = false;
         comboed = 0;
+        justComboed = false;
     }
 }

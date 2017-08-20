@@ -191,9 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: 0
-  Instance: {fileID: 0}
-  RainbowBlock: {fileID: 1779269660630422, guid: e1ef2038615adc2438fab83b7e09833d,
-    type: 2}
+  RainbowBlock: {fileID: 21300000, guid: b4b8df4c78a02b94dbe24a0ef1b61b07, type: 3}
 --- !u!212 &212800287749794796
 SpriteRenderer:
   m_ObjectHideFlags: 1
